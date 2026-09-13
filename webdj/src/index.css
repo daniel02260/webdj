@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette: Otto & Mora */
+  --color-ink: #17231d;
+  --color-forest: #1f3d2f;
+  --color-forest-light: #2c5643;
+  --color-paper: #efe9db;
+  --color-paper-dim: #e4dcc8;
+  --color-ochre: #c68f2e;
+  --color-ochre-light: #e0ab4c;
+  --color-brick: #a83b2b;
+  --color-brick-light: #c65340;
+  --color-cream: #f7f4ec;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ochre);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
